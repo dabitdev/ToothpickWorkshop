@@ -5,5 +5,5 @@ First things first:
 
 `Thank you Stéphane Nicolas (@stephanenicolas) and Daniel Molinero (@dlemures) for this awesome library.`
 
-<img src="https://raw.github.com/stephanenicolas/toothpick/master/assets/logo.jpg" width="125px" /> 
+<img src="android-blackboard.jpg" width="450px" /> 
 Before looking at this project please take a look at the official documentation in https://github.com/stephanenicolas/toothpick/
