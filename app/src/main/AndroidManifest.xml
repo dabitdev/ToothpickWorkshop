@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+          package="com.nordicloop.toothpickworkshop">
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="ToothpickWorkshop"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity
+            android:name="com.nordicloop.toothpickworkshop.Simple1Activity"
+            android:label="Simple 1 - Toothpick"
+            android:theme="@style/AppTheme.NoActionBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:label="Simple 2 - Toothpick"
+            android:name=".Simple2Activity"
+            android:theme="@style/AppTheme.NoActionBar"/>
+
+        <activity
+            android:label="Simple 3 - Toothpick"
+            android:name=".Simple3Activity"
+            android:theme="@style/AppTheme.NoActionBar"/>
+
+        <activity
+            android:label="Advanced 1 - Toothpick"
+            android:name=".Advanced1Activity"
+            android:theme="@style/AppTheme.NoActionBar"/>
+
+        <activity
+            android:label="Advanced 2 - Toothpick"
+            android:name=".Advanced2Activity"
+            android:theme="@style/AppTheme.NoActionBar"/>
+
+        <activity
+            android:label="Advanced 3 - Toothpick"
+            android:name=".Advanced3Activity"
+            android:theme="@style/AppTheme.NoActionBar"/>
+
+        <activity
+            android:label="Advanced 4 - Toothpick"
+            android:name=".Advanced4Activity"
+            android:theme="@style/AppTheme.NoActionBar"/>
+
+        <activity
+            android:label="Advanced 5 - Toothpick"
+            android:name=".Advanced5Activity"
+            android:theme="@style/AppTheme.NoActionBar"/>
+
+        <activity
+            android:label="Library 1 demo - Toothpick"
+            android:name=".LibraryActivity"
+            android:theme="@style/AppTheme.NoActionBar"/>
+
+        <activity
+            android:label="Library 2 demo - Toothpick"
+            android:name=".Library2Activity"
+            android:theme="@style/AppTheme.NoActionBar"/>
+    </application>
+
+</manifest>
