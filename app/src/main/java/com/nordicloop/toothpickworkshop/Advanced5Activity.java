@@ -60,11 +60,6 @@ public class Advanced5Activity extends AppCompatActivity {
 
   }
 
-  private static class ModuleImpl extends Module {
-    public ModuleImpl(Name name, Surname surname) {
-      bind(FullName.class).toProviderInstance(new FullNameProvider(name, surname));
-    }
-  }
   @Override
   public boolean onCreateOptionsMenu(Menu menu) {
     // Inflate the menu; this adds items to the action bar if it is present.
