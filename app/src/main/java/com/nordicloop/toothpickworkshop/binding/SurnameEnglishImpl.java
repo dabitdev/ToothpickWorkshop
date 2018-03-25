@@ -1,4 +1,4 @@
-package com.nordicloop.toothpickworkshop.bindings;
+package com.nordicloop.toothpickworkshop.binding;
 
 public class SurnameEnglishImpl implements Surname {
   @Override

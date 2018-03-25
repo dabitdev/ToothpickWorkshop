@@ -3,10 +3,10 @@ package com.nordicloop.toothpickworkshop;
 import android.support.test.rule.ActivityTestRule;
 import android.support.test.runner.AndroidJUnit4;
 
-import com.nordicloop.toothpickworkshop.bindings.Name;
-import com.nordicloop.toothpickworkshop.bindings.NameSpanishImpl;
-import com.nordicloop.toothpickworkshop.bindings.Surname;
-import com.nordicloop.toothpickworkshop.bindings.SurnameSpanishImpl;
+import com.nordicloop.toothpickworkshop.binding.Name;
+import com.nordicloop.toothpickworkshop.binding.NameSpanishImpl;
+import com.nordicloop.toothpickworkshop.binding.Surname;
+import com.nordicloop.toothpickworkshop.binding.SurnameSpanishImpl;
 
 import org.junit.After;
 import org.junit.Before;

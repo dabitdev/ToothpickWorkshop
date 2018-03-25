@@ -1,4 +1,4 @@
-package com.nordicloop.toothpickworkshop.bindings;
+package com.nordicloop.toothpickworkshop.binding;
 
 import com.nordicloop.mylibrary.FullName;
 

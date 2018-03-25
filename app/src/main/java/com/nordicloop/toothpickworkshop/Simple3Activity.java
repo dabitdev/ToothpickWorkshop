@@ -1,20 +1,16 @@
 package com.nordicloop.toothpickworkshop;
 
-import android.content.Intent;
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.View;
 import android.widget.TextView;
 
-import com.nordicloop.toothpickworkshop.bindings.InjectableNameImpl;
-import com.nordicloop.toothpickworkshop.bindings.InjectableSurnameImpl;
-import com.nordicloop.toothpickworkshop.bindings.Name;
-import com.nordicloop.toothpickworkshop.bindings.Surname;
+import com.nordicloop.toothpickworkshop.binding.InjectableNameImpl;
+import com.nordicloop.toothpickworkshop.binding.InjectableSurnameImpl;
+import com.nordicloop.toothpickworkshop.binding.Name;
+import com.nordicloop.toothpickworkshop.binding.Surname;
 
 import toothpick.Scope;
 import toothpick.Toothpick;

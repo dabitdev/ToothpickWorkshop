@@ -7,10 +7,10 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.TextView;
 
-import com.nordicloop.toothpickworkshop.bindings.Name;
-import com.nordicloop.toothpickworkshop.bindings.NameEnglishImpl;
-import com.nordicloop.toothpickworkshop.bindings.Surname;
-import com.nordicloop.toothpickworkshop.bindings.SurnameEnglishImpl;
+import com.nordicloop.toothpickworkshop.binding.Name;
+import com.nordicloop.toothpickworkshop.binding.NameEnglishImpl;
+import com.nordicloop.toothpickworkshop.binding.Surname;
+import com.nordicloop.toothpickworkshop.binding.SurnameEnglishImpl;
 
 import javax.inject.Inject;
 

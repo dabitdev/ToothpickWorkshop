@@ -1,29 +1,27 @@
-package com.nordicloop.toothpickworkshop.bindings;
+package com.nordicloop.toothpickworkshop.binding;
 
 import com.nordicloop.mylibrary.FullName;
-import com.nordicloop.toothpickworkshop.bindings.Name;
-import com.nordicloop.toothpickworkshop.bindings.Surname;
+import com.nordicloop.toothpickworkshop.annotation.English;
+import com.nordicloop.toothpickworkshop.annotation.Spanish;
 
 import javax.inject.Inject;
-import javax.inject.Named;
 import javax.inject.Provider;
 
 public class InjectedFullNamedNameProvider implements Provider<FullName> {
-
   @Inject
-  @Named("spanish")
+  @Spanish
   Name spanishName;
 
   @Inject
-  @Named("english")
+  @English
   Name englishName;
 
   @Inject
   Surname surname;
 
   private boolean isSpanish;
-  public InjectedFullNamedNameProvider() {
-//    this.isSpanish = isSpanish;
+  public InjectedFullNamedNameProvider(boolean isSpanish) {
+    this.isSpanish = isSpanish;
   }
 
   @Override

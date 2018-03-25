@@ -1,17 +1,16 @@
-package com.nordicloop.toothpickworkshop.bindings;
+package com.nordicloop.toothpickworkshop.binding;
 
 import com.nordicloop.mylibrary.FullName;
 
+import javax.inject.Inject;
 import javax.inject.Provider;
 
-public class FullNameProvider implements Provider<FullName> {
-  Name name;
-  Surname surname;
+public class InjectedFullNameProvider implements Provider<FullName> {
 
-  public FullNameProvider(Name name, Surname surname) {
-    this.name = name;
-    this.surname = surname;
-  }
+  @Inject
+  Name name;
+  @Inject
+  Surname surname;
 
   @Override
   public FullName get() {
