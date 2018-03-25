@@ -35,7 +35,7 @@ A simple usage of `Provider<FullName.class>` that has the members injected in `I
 Same as Advanced4Activity but now the injections happens in the constructor of `Injected2FullNameProvider.java`.
 
 #### Advanced6Activity
-Example of using named bindings (more than one class type in the scope) with `@Named("name")` and using custom qualifier annotations.
+Example of using named bindings (more than one class type in the scope) with `@Named("name")` and using custom annotations (type @Qualifier)
 
 #### LibraryActivity
 Using a scope defined in the `libraryDemo` module, the scope is created by calling `Singleton.getInstance()`
