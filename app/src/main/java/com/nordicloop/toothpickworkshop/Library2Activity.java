@@ -1,21 +1,14 @@
 package com.nordicloop.toothpickworkshop;
 
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.View;
 import android.widget.TextView;
 
 import com.nordicloop.mylibrary.FullName;
-import com.nordicloop.mylibrary.Singleton;
-import com.nordicloop.toothpickworkshop.bindings.Name;
-import com.nordicloop.toothpickworkshop.bindings.NameSpanishImpl;
-import com.nordicloop.toothpickworkshop.bindings.Surname;
-import com.nordicloop.toothpickworkshop.bindings.SurnameSpanishImpl;
+import com.nordicloop.mylibrary.LibraryScope;
 
 import javax.inject.Inject;
 
@@ -31,25 +24,14 @@ public class Library2Activity extends AppCompatActivity {
   @Override
   protected void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
-    setContentView(R.layout.activity_main);
+    setContentView(R.layout.activity_base);
     Toolbar toolbar = findViewById(R.id.toolbar);
     setSupportActionBar(toolbar);
 
     //this will create scope with EnglishFullName implementation of Fullname
-    Singleton.getInstance();
+    LibraryScope.getOrCreateScope();
 
     scope = Toothpick.openScope("LIBRARY");
-
-    FloatingActionButton fab = findViewById(R.id.fab);
-    fab.setOnClickListener(new View.OnClickListener() {
-      @Override
-      public void onClick(View view) {
-        Snackbar.make(view, "No more demos", Snackbar.LENGTH_LONG)
-            .setAction("Action", null).show();
-        Toothpick.reset(scope);
-        Toothpick.closeScope(scope);
-      }
-    });
 
     Toothpick.inject(this, scope);
     ((TextView) findViewById(R.id.firstField)).setText(mFullName.getFullName());

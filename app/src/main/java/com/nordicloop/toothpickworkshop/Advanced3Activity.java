@@ -31,24 +31,11 @@ public class Advanced3Activity extends AppCompatActivity {
   @Override
   protected void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
-    setContentView(R.layout.activity_main);
+    setContentView(R.layout.activity_base);
     Toolbar toolbar = findViewById(R.id.toolbar);
     setSupportActionBar(toolbar);
 
     final Scope scope = Toothpick.openScope("ACTIVITY");
-
-    FloatingActionButton fab = findViewById(R.id.fab);
-    fab.setOnClickListener(new View.OnClickListener() {
-      @Override
-      public void onClick(View view) {
-        Snackbar.make(view, "Opening next example", Snackbar.LENGTH_LONG)
-            .setAction("Action", null).show();
-        Intent intent = new Intent(view.getContext(), Advanced4Activity.class);
-        Toothpick.reset(scope);
-        Toothpick.closeScope(scope);
-        startActivity(intent);
-      }
-    });
 
     final Name name = new NameEnglishImpl();
     final Surname surname = new SurnameEnglishImpl();

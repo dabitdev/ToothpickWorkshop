@@ -11,7 +11,6 @@ import android.view.View;
 import android.widget.TextView;
 
 import com.nordicloop.mylibrary.FullName;
-import com.nordicloop.toothpickworkshop.bindings.FullNameProvider;
 import com.nordicloop.toothpickworkshop.bindings.InjectableNameImpl;
 import com.nordicloop.toothpickworkshop.bindings.InjectableSurnameImpl;
 import com.nordicloop.toothpickworkshop.bindings.InjectedFullNameProvider;
@@ -31,22 +30,11 @@ public class Advanced4Activity extends AppCompatActivity {
   @Override
   protected void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
-    setContentView(R.layout.activity_main);
+    setContentView(R.layout.activity_base);
     Toolbar toolbar = findViewById(R.id.toolbar);
     setSupportActionBar(toolbar);
 
     final Scope scope = Toothpick.openScope("ACTIVITY");
-
-    FloatingActionButton fab = findViewById(R.id.fab);
-    fab.setOnClickListener(new View.OnClickListener() {
-      @Override
-      public void onClick(View view) {
-        Intent intent = new Intent(view.getContext(), Advanced5Activity.class);
-        Toothpick.reset(scope);
-        Toothpick.closeScope(scope);
-        startActivity(intent);
-      }
-    });
 
     scope.installModules(new Module() {{
       bind(Name.class).to(InjectableNameImpl.class);

@@ -1,5 +1,5 @@
 ## javaToothpickWorkshop
-An Android java workshop about the toothpick library. It contains more than 10 ways of using toothpick and some examples with instrumentation tests.
+An Android java workshop about the toothpick library. It contains an extensive list of usages of the toothpick library and some examples with instrumentation tests.
 
 First things first:
 
@@ -8,11 +8,13 @@ First things first:
 <img src="android-blackboard.jpg" width="450px" /> 
 Before looking at this project please take a look at the official documentation in https://github.com/stephanenicolas/toothpick/
 
+These are the following examples exposed in the project:
+ 
 #### Simple1Activity
 Simple binding of interfaces `Name.class` and `Surname.class` using `toInstance` to `new NameEnglishImpl()` and `new SurnameEnglishImpl()`.
 
 #### Simple2Activity
-Simple binding of interfaces `Name.class` and `Surname.class` using `to` with implementations that have `@Inject`in the default constructor.
+Simple binding of interfaces `Name.class` and `Surname.class` using `to` with implementations that have `@Inject` in the default constructor.
 
 #### Simple3Activity
 Similar than Simple2Activity but using on demand injection with `Scope#getInstance()`
@@ -36,7 +38,7 @@ Same as Advanced4Activity but now the injections happens in the constructor of `
 Using a scope defined in the `libraryDemo` module, the scope is created by calling `Singleton.getInstance()`
 
 #### Library2Activity
-Using a scope defined in the `libraryDemo` module and installing a child scope in the applaction that overrides the binding defined in the library.
+Using a scope defined in the `libraryDemo` module and installing a child scope in the application that overrides the binding defined in the library.
 
 #### SimpleActivityTest
 `testWithTestModule()` uses `installTestModule` to override all bindings.

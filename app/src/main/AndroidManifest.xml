@@ -5,13 +5,12 @@
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
-        android:label="ToothpickWorkshop"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
-            android:name="com.nordicloop.toothpickworkshop.Simple1Activity"
-            android:label="Simple 1 - Toothpick"
+            android:name="com.nordicloop.toothpickworkshop.MainActivity"
+            android:label="ToothpickWorkshop"
             android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
@@ -19,6 +18,11 @@
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
+
+        <activity
+            android:label="Simple 1 - Toothpick"
+            android:name=".Simple1Activity"
+            android:theme="@style/AppTheme.NoActionBar"/>
 
         <activity
             android:label="Simple 2 - Toothpick"
@@ -53,6 +57,11 @@
         <activity
             android:label="Advanced 5 - Toothpick"
             android:name=".Advanced5Activity"
+            android:theme="@style/AppTheme.NoActionBar"/>
+
+        <activity
+            android:label="Advanced 6 - Toothpick"
+            android:name=".Advanced6Activity"
             android:theme="@style/AppTheme.NoActionBar"/>
 
         <activity

@@ -16,8 +16,6 @@ import com.nordicloop.toothpickworkshop.bindings.InjectableSurnameImpl;
 import com.nordicloop.toothpickworkshop.bindings.Name;
 import com.nordicloop.toothpickworkshop.bindings.Surname;
 
-import javax.inject.Inject;
-
 import toothpick.Scope;
 import toothpick.Toothpick;
 import toothpick.config.Module;
@@ -29,24 +27,12 @@ public class Simple3Activity extends AppCompatActivity {
   @Override
   protected void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
-    setContentView(R.layout.activity_main);
+    setContentView(R.layout.activity_base);
     Toolbar toolbar = findViewById(R.id.toolbar);
     setSupportActionBar(toolbar);
 
     final Scope scope = Toothpick.openScope("ACTIVITY");
-
-    FloatingActionButton fab = findViewById(R.id.fab);
-    fab.setOnClickListener(new View.OnClickListener() {
-      @Override
-      public void onClick(View view) {
-        Snackbar.make(view, "Opening next example", Snackbar.LENGTH_LONG)
-            .setAction("Action", null).show();
-        Intent intent = new Intent(Simple3Activity.this, Advanced1Activity.class);
-        Toothpick.reset(scope);
-        Toothpick.closeScope(scope);
-        startActivity(intent);
-      }
-    });
+    Toothpick.reset(scope);
 
     scope.installModules(new Module() {{
       bind(Name.class).to(InjectableNameImpl.class);

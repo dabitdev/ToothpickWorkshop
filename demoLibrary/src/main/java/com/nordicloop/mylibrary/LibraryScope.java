@@ -5,26 +5,26 @@ import toothpick.Scope;
 import toothpick.Toothpick;
 import toothpick.config.Module;
 
-public class Singleton {
-  private static Singleton singleton;
+public class LibraryScope {
+  private static LibraryScope instance;
   private static Scope scope;
-  private Singleton() {
+  private LibraryScope() {
     scope = Toothpick.openScope("LIBRARY");
     scope.installModules(new Module(){{
       bind(FullName.class).toInstance(new EnglishFullName());
     }});
   }
 
-  public static Singleton getInstance() {
-    if(singleton == null) {
-      singleton = new Singleton();
+  public static LibraryScope getOrCreateScope() {
+    if(instance == null) {
+      instance = new LibraryScope();
     }
-    return  singleton;
+    return instance;
   }
 
-  public static void release(){
-    if (singleton != null) {
-      singleton = null;
+  public void release(){
+    if (instance != null) {
+      instance = null;
     }
   }
 

@@ -7,10 +7,13 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.TextView;
 
+import com.nordicloop.mylibrary.FullName;
+import com.nordicloop.toothpickworkshop.bindings.InjectableSurnameImpl;
+import com.nordicloop.toothpickworkshop.bindings.InjectedFullNamedNameProvider;
 import com.nordicloop.toothpickworkshop.bindings.Name;
 import com.nordicloop.toothpickworkshop.bindings.NameEnglishImpl;
+import com.nordicloop.toothpickworkshop.bindings.NameSpanishImpl;
 import com.nordicloop.toothpickworkshop.bindings.Surname;
-import com.nordicloop.toothpickworkshop.bindings.SurnameEnglishImpl;
 
 import javax.inject.Inject;
 
@@ -18,11 +21,9 @@ import toothpick.Scope;
 import toothpick.Toothpick;
 import toothpick.config.Module;
 
-public class Simple1Activity extends AppCompatActivity {
+public class Advanced6Activity extends AppCompatActivity {
   @Inject
-  protected Name mName;
-  @Inject
-  protected Surname mSurname;
+  protected FullName mFullName;
 
   @Override
   protected void onCreate(Bundle savedInstanceState) {
@@ -32,16 +33,18 @@ public class Simple1Activity extends AppCompatActivity {
     setSupportActionBar(toolbar);
 
     final Scope scope = Toothpick.openScope("ACTIVITY");
+
     scope.installModules(new Module() {{
-      bind(Name.class).toInstance(new NameEnglishImpl());
-      bind(Surname.class).toInstance(new SurnameEnglishImpl());
+      bind(Name.class).withName("english").to(NameEnglishImpl.class);
+      bind(Name.class).withName("spanish").to(NameSpanishImpl.class);
+      bind(Surname.class).to(InjectableSurnameImpl.class);
+      bind(FullName.class).toProviderInstance(new InjectedFullNamedNameProvider());
     }});
 
     Toothpick.inject(this, scope);
-    ((TextView) findViewById(R.id.firstField)).setText(mName.getName());
-    ((TextView) findViewById(R.id.secondField)).setText(mSurname.getSurname());
+    ((TextView) findViewById(R.id.firstField)).setText(mFullName.getFullName());
+    ((TextView) findViewById(R.id.secondField)).setText(null);
 
-    Toothpick.reset(scope);
   }
 
   @Override

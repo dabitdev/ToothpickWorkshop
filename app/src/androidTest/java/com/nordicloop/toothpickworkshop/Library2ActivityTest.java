@@ -4,7 +4,7 @@ import android.support.test.rule.ActivityTestRule;
 import android.support.test.runner.AndroidJUnit4;
 
 import com.nordicloop.mylibrary.FullName;
-import com.nordicloop.mylibrary.Singleton;
+import com.nordicloop.mylibrary.LibraryScope;
 
 import org.junit.After;
 import org.junit.Before;
@@ -35,12 +35,12 @@ public class Library2ActivityTest {
   @Before
   public void setup() {
     Toothpick.reset();
-    Singleton.release();
+    LibraryScope.getOrCreateScope().release();
   }
 
   @After
   public void tearDown() {
-    Singleton.release();
+    LibraryScope.getOrCreateScope().release();
     Toothpick.reset();
   }
 
@@ -54,7 +54,7 @@ public class Library2ActivityTest {
 
   @Test
   public void testChildScope() {
-    FullName fullname = Singleton.getInstance().getScope().getInstance(FullName.class);
+    FullName fullname = LibraryScope.getOrCreateScope().getScope().getInstance(FullName.class);
 
     Library2Activity libraryActivity = activityRule.launchActivity(null);
 
@@ -64,7 +64,7 @@ public class Library2ActivityTest {
 
     assertEquals("lionel messi", libraryActivity.mFullName.getFullName());
 
-    FullName fullname2 = Singleton.getInstance().getScope().getInstance(FullName.class);
+    FullName fullname2 = LibraryScope.getOrCreateScope().getScope().getInstance(FullName.class);
 
     assertNotEquals(fullname2, libraryActivity.mFullName);
   }
