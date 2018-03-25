@@ -11,7 +11,7 @@ import com.nordicloop.mylibrary.FullName;
 import com.nordicloop.toothpickworkshop.binding.InjectableNameImpl;
 import com.nordicloop.toothpickworkshop.binding.InjectableSurnameImpl;
 import com.nordicloop.toothpickworkshop.binding.Injected2FullNameProvider;
-import com.nordicloop.toothpickworkshop.binding.Name;
+import com.nordicloop.mylibrary.Name;
 import com.nordicloop.toothpickworkshop.binding.Surname;
 
 import javax.inject.Inject;

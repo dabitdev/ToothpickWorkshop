@@ -37,6 +37,9 @@ Same as Advanced4Activity but now the injections happens in the constructor of `
 #### Advanced6Activity
 Example of using named bindings (more than one class type in the scope) with `@Named("name")` and using custom annotations (type @Qualifier)
 
+#### Advanced7Activity
+Example of the creation of a child scope on the top of the parent defined in another module to override one binding. It also shows how the child activity injects variable members from the parent activity.
+
 #### LibraryActivity
 Using a scope defined in the `libraryDemo` module, the scope is created by calling `Singleton.getInstance()`
 
@@ -53,3 +56,9 @@ Using a scope defined in the `libraryDemo` module and installing a child scope i
 #### Library2ActivityTest
 `testNormal()` same as the one above.
 `testChildScope()` proves that child scope implementation overrides the bindings of the parent.
+
+## Other Notes
+To override a binding there are two different aprouches
+- Use the same scope and a new module  with `#installTestModule(...)` that redefines a new existing binding.
+- Open a child scope on the top of the parent that redefines a new existing binding.
+- WHAT DOES NOT WORK: installing a module in the existing scope that redefines a previous binding. This will not be override anything.

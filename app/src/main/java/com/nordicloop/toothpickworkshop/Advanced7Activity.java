@@ -1,45 +1,48 @@
 package com.nordicloop.toothpickworkshop;
 
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.TextView;
 
-import com.nordicloop.toothpickworkshop.binding.InjectableNameImpl;
-import com.nordicloop.toothpickworkshop.binding.InjectableSurnameImpl;
-import com.nordicloop.mylibrary.Name;
-import com.nordicloop.toothpickworkshop.binding.Surname;
+import com.nordicloop.mylibrary.FullName;
+import com.nordicloop.mylibrary.LibraryScope;
+
+import javax.inject.Inject;
 
 import toothpick.Scope;
 import toothpick.Toothpick;
 import toothpick.config.Module;
 
-public class Simple3Activity extends AppCompatActivity {
-  protected Name mName;
-  protected Surname mSurname;
+public class Advanced7Activity extends BaseActivity {
+  @Inject
+  protected FullName mFullName;
 
   @Override
   protected void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
+
+    LibraryScope.getOrCreateScope();
+    Scope scope = Toothpick.openScopes("LIBRARY", "ADV7");
+
     setContentView(R.layout.activity_base);
     Toolbar toolbar = findViewById(R.id.toolbar);
     setSupportActionBar(toolbar);
 
-    final Scope scope = Toothpick.openScope("ACTIVITY");
-    Toothpick.reset(scope);
-
     scope.installModules(new Module() {{
-      bind(Name.class).to(InjectableNameImpl.class);
-      bind(Surname.class).to(InjectableSurnameImpl.class);
+      bind(FullName.class).toInstance(new FullName() {
+        @Override
+        public String getFullName() {
+          return "barack obama";
+        }
+      });
     }});
 
-    mName = scope.getInstance(Name.class);
-    mSurname = scope.getInstance(Surname.class);
+    Toothpick.inject(this, scope);
+    ((TextView) findViewById(R.id.firstField)).setText(baseName.getName());
+    ((TextView) findViewById(R.id.secondField)).setText(mFullName.getFullName());
 
-    ((TextView) findViewById(R.id.firstField)).setText(mName.getName());
-    ((TextView) findViewById(R.id.secondField)).setText(mSurname.getSurname());
   }
 
   @Override

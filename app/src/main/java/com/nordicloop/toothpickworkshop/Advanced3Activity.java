@@ -9,7 +9,7 @@ import android.widget.TextView;
 
 import com.nordicloop.mylibrary.FullName;
 import com.nordicloop.toothpickworkshop.binding.FullNameProvider;
-import com.nordicloop.toothpickworkshop.binding.Name;
+import com.nordicloop.mylibrary.Name;
 import com.nordicloop.toothpickworkshop.binding.NameEnglishImpl;
 import com.nordicloop.toothpickworkshop.binding.Surname;
 import com.nordicloop.toothpickworkshop.binding.SurnameEnglishImpl;

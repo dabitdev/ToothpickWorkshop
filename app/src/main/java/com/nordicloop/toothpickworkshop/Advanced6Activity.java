@@ -8,12 +8,9 @@ import android.view.MenuItem;
 import android.widget.TextView;
 
 import com.nordicloop.mylibrary.FullName;
-import com.nordicloop.toothpickworkshop.annotation.English;
 import com.nordicloop.toothpickworkshop.annotation.Spanish;
 import com.nordicloop.toothpickworkshop.binding.EnglishFullName;
-import com.nordicloop.toothpickworkshop.binding.InjectableSurnameImpl;
-import com.nordicloop.toothpickworkshop.binding.InjectedFullNamedNameProvider;
-import com.nordicloop.toothpickworkshop.binding.Name;
+import com.nordicloop.mylibrary.Name;
 import com.nordicloop.toothpickworkshop.binding.NameEnglishImpl;
 import com.nordicloop.toothpickworkshop.binding.NameSpanishImpl;
 import com.nordicloop.toothpickworkshop.binding.SpanishFullName;
@@ -36,10 +33,6 @@ public class Advanced6Activity extends AppCompatActivity {
   @Inject
   @Named("English")
   protected FullName mEnglish;
-
-//  @Inject
-//  @Named("English")
-//  protected Name name;
 
   @Inject
   @Spanish

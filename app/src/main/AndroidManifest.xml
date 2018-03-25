@@ -65,6 +65,11 @@
             android:theme="@style/AppTheme.NoActionBar"/>
 
         <activity
+            android:label="Advanced 7 - Toothpick"
+            android:name=".Advanced7Activity"
+            android:theme="@style/AppTheme.NoActionBar"/>
+
+        <activity
             android:label="Library 1 demo - Toothpick"
             android:name=".LibraryActivity"
             android:theme="@style/AppTheme.NoActionBar"/>

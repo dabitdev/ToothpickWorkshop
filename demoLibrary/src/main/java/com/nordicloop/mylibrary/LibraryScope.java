@@ -12,6 +12,12 @@ public class LibraryScope {
     scope = Toothpick.openScope("LIBRARY");
     scope.installModules(new Module(){{
       bind(FullName.class).toInstance(new EnglishFullName());
+      bind(Name.class).toInstance(new Name() {
+        @Override
+        public String getName() {
+          return "bill";
+        }
+      });
     }});
   }
 

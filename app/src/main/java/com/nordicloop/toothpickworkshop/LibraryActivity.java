@@ -29,7 +29,7 @@ public class LibraryActivity extends AppCompatActivity {
     //this will create scope with EnglishFullName implementation of Fullname
     LibraryScope libraryScope = LibraryScope.getOrCreateScope();
 
-    final Scope scope = Toothpick.openScopes("LIBRARY");
+    final Scope scope = Toothpick.openScope("LIBRARY");
 
     Toothpick.inject(this, scope);
     ((TextView) findViewById(R.id.firstField)).setText(mFullName.getFullName());

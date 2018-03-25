@@ -43,6 +43,8 @@ public class MainActivity extends AppCompatActivity {
             "Same as Advanced4Activity but now the injections happens in the constructor of Injected2FullNameProvider.java."),
         new Row(Advanced6Activity.class,
             "Example of using named bindings (more than one class type in the scope) with `@Named(\"name\")` and using custom qualifier annotations."),
+        new Row(Advanced7Activity.class,
+            "Example of the creation of a child scope on the top of the parent defined in another module to override one binding. It also shows how the child activity injects variable members from the parent activity."),
         new Row(LibraryActivity.class,
             "Using a scope defined in the libraryDemo module, the scope is created by calling LibraryScope.getOrCreateScope()"),
         new Row(Library2Activity.class,

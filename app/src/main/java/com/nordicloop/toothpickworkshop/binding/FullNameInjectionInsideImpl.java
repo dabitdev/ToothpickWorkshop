@@ -2,6 +2,7 @@ package com.nordicloop.toothpickworkshop.binding;
 
 
 import com.nordicloop.mylibrary.FullName;
+import com.nordicloop.mylibrary.Name;
 
 import javax.inject.Inject;
 
