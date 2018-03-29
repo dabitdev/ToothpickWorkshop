@@ -25,6 +25,11 @@
             android:theme="@style/AppTheme.NoActionBar"/>
 
         <activity
+            android:label="Simple 1 - Kotlin Toothpick"
+            android:name=".Simple1KotlinActivity"
+            android:theme="@style/AppTheme.NoActionBar"/>
+
+        <activity
             android:label="Simple 2 - Toothpick"
             android:name=".Simple2Activity"
             android:theme="@style/AppTheme.NoActionBar"/>

@@ -21,6 +21,7 @@ public class InjectedFullNamedNameProvider implements Provider<FullName> {
   Surname surname;
 
   private boolean isSpanish;
+
   public InjectedFullNamedNameProvider(boolean isSpanish) {
     this.isSpanish = isSpanish;
   }

@@ -26,6 +26,8 @@ public class MainActivity extends AppCompatActivity {
     Row[] rows = {
         new Row(Simple1Activity.class,
             "Simple binding of interfaces Name.class and Surname.class using `toInstance` to new NameEnglishImpl() and new SurnameEnglishImpl()."),
+        new Row(Simple1KotlinActivity.class,
+            "Same as above in kotlin"),
         new Row(Simple2Activity.class,
             "Simple binding of interfaces Name.class and Surname.class using `to` with implementations that have @Inject the default constructor."),
         new Row(Simple3Activity.class,
