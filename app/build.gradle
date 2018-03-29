@@ -30,7 +30,6 @@ dependencies {
     androidTestImplementation 'com.android.support.test:runner:1.0.1'
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.1'
 
-    kapt 'com.github.stephanenicolas.toothpick:toothpick-runtime:1.1.3'
     kapt 'com.github.stephanenicolas.toothpick:toothpick-compiler:1.1.3'
 
     implementation 'com.github.stephanenicolas.toothpick:smoothie:1.1.3'
