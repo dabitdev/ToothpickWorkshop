@@ -61,4 +61,4 @@ Using a scope defined in the `libraryDemo` module and installing a child scope i
 To override a binding there are two different approuches
 - :white_check_mark: Use the same scope and a new module  with `#installTestModule(...)` that redefines a new existing binding.
 - :white_check_mark: Open a child scope on the top of the parent that redefines a new existing binding.
-- :no_entry_sign: WHAT DOES NOT WORK: installing a module in the existing scope that redefines a previous binding. This will not be override anything.
+- :no_entry_sign: WHAT DOES NOT WORK: installing a module in the existing scope that redefines a previous binding. This will not override anything.
